@@ -1,0 +1,49 @@
+@startuml
+
+entity "Библиотека" as lib {
++ ID_Библиотеки
+}
+
+entity "Экземпляр книги" as copy {
++ номер копии
+
+положение на полке 
+
+ISBN as id
+}
+
+entity "Книга" as book {
++ ISBN as id
+
+год
+
+название
+
+автор
+
+количество страниц
+}
+
+entity "Читатель" as reader {
+Фамилия
+
+Имя
+
+адрес
+
+день рождения
+
+}
+
+entity "Издательство" as publish {
+имя
+
+адрес 
+
+}
+
+copy }|..|| lib: "содержит"
+book::id <|-- copy::id
+copy }|..|| publish: "издает"
+copy }|..|| reader: "берет"
+@enduml
