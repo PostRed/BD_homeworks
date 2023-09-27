@@ -1,0 +1,8 @@
+@startuml
+
+relationship }-- entity
+attribute }-- relationship
+entity <|-- attribute
+key <|-- attribute
+role }-- attribute
+@enduml
